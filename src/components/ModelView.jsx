@@ -8,6 +8,7 @@ import Lights from "./Light";
 import { Suspense } from "react";
 import Iphone from "./IPhone";
 import * as THREE from "three";
+import Loading from "./Loading";
 
 const ModelView = ({
   index,
@@ -24,7 +25,7 @@ const ModelView = ({
       id={gsapType}
       className={`w-full h-full absolute ${
         index === 2 ? "right-[-100%]" : "right-0"
-      }`}
+      } `}
     >
       <ambientLight intensity={0.3} />
       <PerspectiveCamera makeDefault position={[0, 0, 4]} />
@@ -46,7 +47,7 @@ const ModelView = ({
         <Suspense
           fallback={
             <Html>
-              <div>Loading...</div>
+              <Loading />
             </Html>
           }
         >
